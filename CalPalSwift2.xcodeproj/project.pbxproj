@@ -8,17 +8,45 @@
 
 /* Begin PBXBuildFile section */
 		4B89A4C32B0F731900DC7CD9 /* CalPalSwift2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4C22B0F731900DC7CD9 /* CalPalSwift2App.swift */; };
-		4B89A4C52B0F731900DC7CD9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4C42B0F731900DC7CD9 /* ContentView.swift */; };
 		4B89A4C72B0F731A00DC7CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B89A4C62B0F731A00DC7CD9 /* Assets.xcassets */; };
 		4B89A4CA2B0F731A00DC7CD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B89A4C92B0F731A00DC7CD9 /* Preview Assets.xcassets */; };
+		4B89A4D42B0F738600DC7CD9 /* OpenFoodFactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4D32B0F738600DC7CD9 /* OpenFoodFactsService.swift */; };
+		4B89A4D62B0F73A000DC7CD9 /* FoodFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4D52B0F73A000DC7CD9 /* FoodFacts.swift */; };
+		4B89A4D82B0F746300DC7CD9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4D72B0F746300DC7CD9 /* Product.swift */; };
+		4B89A4DA2B0F748900DC7CD9 /* Nutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4D92B0F748900DC7CD9 /* Nutriments.swift */; };
+		4B89A4DD2B0F769F00DC7CD9 /* EatenItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4DC2B0F769F00DC7CD9 /* EatenItem.swift */; };
+		4B89A4E22B0F76F700DC7CD9 /* MealTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4E12B0F76F700DC7CD9 /* MealTime.swift */; };
+		4B89A4E72B0F783100DC7CD9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4E62B0F783100DC7CD9 /* DashboardView.swift */; };
+		4B89A4E92B0F7D0C00DC7CD9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4E82B0F7D0C00DC7CD9 /* RootView.swift */; };
+		4B89A4ED2B0F7D8F00DC7CD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4EC2B0F7D8F00DC7CD9 /* SettingsView.swift */; };
+		4B89A4F12B0F7DB700DC7CD9 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4F02B0F7DB700DC7CD9 /* StatisticsView.swift */; };
+		4B89A4F32B0F817100DC7CD9 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4F22B0F817100DC7CD9 /* RootViewModel.swift */; };
+		4B89A4F52B0F85A000DC7CD9 /* CalorieStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4F42B0F85A000DC7CD9 /* CalorieStatus.swift */; };
+		4B89A4F72B0F878400DC7CD9 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4F62B0F878400DC7CD9 /* ChartData.swift */; };
+		4B89A4F92B0FA7EB00DC7CD9 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4F82B0FA7EB00DC7CD9 /* PieChartView.swift */; };
+		4B89A4FB2B0FA84800DC7CD9 /* EatenItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4FA2B0FA84800DC7CD9 /* EatenItemsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B89A4BF2B0F731900DC7CD9 /* CalPalSwift2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalPalSwift2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B89A4C22B0F731900DC7CD9 /* CalPalSwift2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalPalSwift2App.swift; sourceTree = "<group>"; };
-		4B89A4C42B0F731900DC7CD9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B89A4C62B0F731A00DC7CD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B89A4C92B0F731A00DC7CD9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4B89A4D32B0F738600DC7CD9 /* OpenFoodFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsService.swift; sourceTree = "<group>"; };
+		4B89A4D52B0F73A000DC7CD9 /* FoodFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodFacts.swift; sourceTree = "<group>"; };
+		4B89A4D72B0F746300DC7CD9 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		4B89A4D92B0F748900DC7CD9 /* Nutriments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutriments.swift; sourceTree = "<group>"; };
+		4B89A4DC2B0F769F00DC7CD9 /* EatenItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatenItem.swift; sourceTree = "<group>"; };
+		4B89A4E12B0F76F700DC7CD9 /* MealTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTime.swift; sourceTree = "<group>"; };
+		4B89A4E62B0F783100DC7CD9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		4B89A4E82B0F7D0C00DC7CD9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		4B89A4EC2B0F7D8F00DC7CD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4B89A4F02B0F7DB700DC7CD9 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		4B89A4F22B0F817100DC7CD9 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		4B89A4F42B0F85A000DC7CD9 /* CalorieStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieStatus.swift; sourceTree = "<group>"; };
+		4B89A4F62B0F878400DC7CD9 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		4B89A4F82B0FA7EB00DC7CD9 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		4B89A4FA2B0FA84800DC7CD9 /* EatenItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatenItemsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +79,10 @@
 		4B89A4C12B0F731900DC7CD9 /* CalPalSwift2 */ = {
 			isa = PBXGroup;
 			children = (
+				4B89A4D22B0F736600DC7CD9 /* Services */,
+				4B89A4D12B0F735E00DC7CD9 /* Models */,
+				4B89A4D02B0F735500DC7CD9 /* Core */,
 				4B89A4C22B0F731900DC7CD9 /* CalPalSwift2App.swift */,
-				4B89A4C42B0F731900DC7CD9 /* ContentView.swift */,
 				4B89A4C62B0F731A00DC7CD9 /* Assets.xcassets */,
 				4B89A4C82B0F731A00DC7CD9 /* Preview Content */,
 			);
@@ -65,6 +95,82 @@
 				4B89A4C92B0F731A00DC7CD9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4B89A4D02B0F735500DC7CD9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4EA2B0F7D2F00DC7CD9 /* Root */,
+				4B89A4E32B0F780D00DC7CD9 /* Dashboard */,
+				4B89A4EE2B0F7D9B00DC7CD9 /* Statistics */,
+				4B89A4EB2B0F7D8000DC7CD9 /* Settings */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4B89A4D12B0F735E00DC7CD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4E02B0F76EC00DC7CD9 /* Enums */,
+				4B89A4D52B0F73A000DC7CD9 /* FoodFacts.swift */,
+				4B89A4D72B0F746300DC7CD9 /* Product.swift */,
+				4B89A4D92B0F748900DC7CD9 /* Nutriments.swift */,
+				4B89A4DC2B0F769F00DC7CD9 /* EatenItem.swift */,
+				4B89A4F62B0F878400DC7CD9 /* ChartData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4B89A4D22B0F736600DC7CD9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4D32B0F738600DC7CD9 /* OpenFoodFactsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4B89A4E02B0F76EC00DC7CD9 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4E12B0F76F700DC7CD9 /* MealTime.swift */,
+				4B89A4F42B0F85A000DC7CD9 /* CalorieStatus.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		4B89A4E32B0F780D00DC7CD9 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4E62B0F783100DC7CD9 /* DashboardView.swift */,
+				4B89A4F82B0FA7EB00DC7CD9 /* PieChartView.swift */,
+				4B89A4FA2B0FA84800DC7CD9 /* EatenItemsListView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		4B89A4EA2B0F7D2F00DC7CD9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4E82B0F7D0C00DC7CD9 /* RootView.swift */,
+				4B89A4F22B0F817100DC7CD9 /* RootViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		4B89A4EB2B0F7D8000DC7CD9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4EC2B0F7D8F00DC7CD9 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4B89A4EE2B0F7D9B00DC7CD9 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4F02B0F7DB700DC7CD9 /* StatisticsView.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +243,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B89A4C52B0F731900DC7CD9 /* ContentView.swift in Sources */,
+				4B89A4D42B0F738600DC7CD9 /* OpenFoodFactsService.swift in Sources */,
+				4B89A4DD2B0F769F00DC7CD9 /* EatenItem.swift in Sources */,
+				4B89A4DA2B0F748900DC7CD9 /* Nutriments.swift in Sources */,
+				4B89A4D82B0F746300DC7CD9 /* Product.swift in Sources */,
+				4B89A4F72B0F878400DC7CD9 /* ChartData.swift in Sources */,
 				4B89A4C32B0F731900DC7CD9 /* CalPalSwift2App.swift in Sources */,
+				4B89A4F92B0FA7EB00DC7CD9 /* PieChartView.swift in Sources */,
+				4B89A4ED2B0F7D8F00DC7CD9 /* SettingsView.swift in Sources */,
+				4B89A4F52B0F85A000DC7CD9 /* CalorieStatus.swift in Sources */,
+				4B89A4FB2B0FA84800DC7CD9 /* EatenItemsListView.swift in Sources */,
+				4B89A4E72B0F783100DC7CD9 /* DashboardView.swift in Sources */,
+				4B89A4D62B0F73A000DC7CD9 /* FoodFacts.swift in Sources */,
+				4B89A4F12B0F7DB700DC7CD9 /* StatisticsView.swift in Sources */,
+				4B89A4E22B0F76F700DC7CD9 /* MealTime.swift in Sources */,
+				4B89A4F32B0F817100DC7CD9 /* RootViewModel.swift in Sources */,
+				4B89A4E92B0F7D0C00DC7CD9 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +399,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +428,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
