@@ -107,7 +107,8 @@
 		4B89A4D02B0F735500DC7CD9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				4B89A4EA2B0F7D2F00DC7CD9 /* Root */,
+				4B89A4E82B0F7D0C00DC7CD9 /* RootView.swift */,
+				4B89A4F22B0F817100DC7CD9 /* RootViewModel.swift */,
 				4B89A4E32B0F780D00DC7CD9 /* Dashboard */,
 				4B89A4EE2B0F7D9B00DC7CD9 /* Statistics */,
 				4B89A4EB2B0F7D8000DC7CD9 /* Settings */,
@@ -148,20 +149,10 @@
 		4B89A4E32B0F780D00DC7CD9 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				4B89A5022B0FC48B00DC7CD9 /* Components */,
 				4B89A4E62B0F783100DC7CD9 /* DashboardView.swift */,
-				4B89A4F82B0FA7EB00DC7CD9 /* PieChartView.swift */,
-				4B89A4FA2B0FA84800DC7CD9 /* EatenItemsListView.swift */,
 			);
 			path = Dashboard;
-			sourceTree = "<group>";
-		};
-		4B89A4EA2B0F7D2F00DC7CD9 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				4B89A4E82B0F7D0C00DC7CD9 /* RootView.swift */,
-				4B89A4F22B0F817100DC7CD9 /* RootViewModel.swift */,
-			);
-			path = Root;
 			sourceTree = "<group>";
 		};
 		4B89A4EB2B0F7D8000DC7CD9 /* Settings */ = {
@@ -187,6 +178,15 @@
 				4B89A5002B0FC31600DC7CD9 /* 1_b.png */,
 			);
 			path = screenshots;
+			sourceTree = "<group>";
+		};
+		4B89A5022B0FC48B00DC7CD9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4F82B0FA7EB00DC7CD9 /* PieChartView.swift */,
+				4B89A4FA2B0FA84800DC7CD9 /* EatenItemsListView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
