@@ -21,7 +21,31 @@ class RootViewModel: ObservableObject {
     @Published var sortedItems: [MealTime: [EatenItem]]
     @Published var userSettings: UserSettings
     
-    
+    init() {
+        self.eatenItems = OpenFoodFactsService.eatenProducts
+        calorieEaten = []
+        nutritionsEaten = []
+        sortedItems = [:]
+        
+        userSettings = UserSettings(
+            gender: Gender.Male,
+            birthday: Date(),
+            height: 183,
+            weight: 85,
+            activityLevel: ActivityLevel.LightlyActive,
+            goal: Goal.Maintain,
+            calories: 2300
+        )
+    }
+}
+
+
+/*
+ 
+    DASHBOARD VIEW METHODS
+ 
+ */
+extension RootViewModel {
     func setChartData() {
         
         var eaten = 0
@@ -46,7 +70,14 @@ class RootViewModel: ObservableObject {
             sortedItems[item.mealTime]?.append(item)
         }
     }
-    
+}
+
+/*
+ 
+    USERSETTINGS METHODS
+ 
+ */
+extension RootViewModel {
     func incActivityLevel() {
         switch userSettings.activityLevel {
         case .LightlyActive:
@@ -76,6 +107,7 @@ class RootViewModel: ObservableObject {
             userSettings.activityLevel = .VeryActive
         }
     }
+    
     func incGoal() {
         switch userSettings.goal {
         case .LoseFast:
@@ -94,7 +126,6 @@ class RootViewModel: ObservableObject {
             break
         }
     }
-    
     func decGoal() {
         switch userSettings.goal {
         case .LoseFast:
@@ -112,28 +143,5 @@ class RootViewModel: ObservableObject {
             userSettings.goal = .Gain
             break
         }
-    }
-    
-    init() {
-        self.eatenItems = OpenFoodFactsService.eatenProducts
-        
-        calorieEaten = []
-        nutritionsEaten = []
-        
-        sortedItems = [
-            MealTime.breakfast : [],
-            MealTime.lunch : [],
-            MealTime.dinner : [],
-            MealTime.snack : []
-        ]
-        userSettings = UserSettings(
-            gender: Gender.Male,
-            birthday: Date(),
-            height: 183,
-            weight: 85,
-            activityLevel: ActivityLevel.LightlyActive,
-            goal: Goal.Maintain,
-            calories: 2300
-        )
     }
 }
