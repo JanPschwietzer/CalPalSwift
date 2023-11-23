@@ -22,11 +22,13 @@ struct RootView: View {
                             Text("Dashboard")
                         }
                     StatisticsView()
+                        .environmentObject(vm)
                         .tabItem {
                             Image(systemName: "calendar")
                             Text("Wochenbericht")
                         }
                     SettingsView()
+                        .environmentObject(vm)
                         .tabItem {
                             Image(systemName: "gear")
                             Text("Settings")
