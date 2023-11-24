@@ -62,6 +62,7 @@ struct SettingsView: View {
 
             }
             .navigationTitle("Settings")
+            .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 vm.getUserSettings()
             }
