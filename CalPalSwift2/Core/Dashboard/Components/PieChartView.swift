@@ -7,14 +7,16 @@
 
 import SwiftUI
 import Charts
+import SwiftData
 
 struct PieChartView: View {
     
-    @EnvironmentObject var vm: RootViewModel
+    @Query private var eatenItems: [EatenItem]
+    @State private var calorieEaten = [ChartData]()
     
     var body: some View {
         Chart {
-            ForEach(vm.calorieEaten) { item in
+            ForEach(calorieEaten) { item in
                 SectorMark(
                     angle: .value(item.name, item.number),
                     innerRadius: .ratio(0.65),
@@ -36,12 +38,30 @@ struct PieChartView: View {
             "left": Color(.gray)])
         .frame(height: 300, alignment: .top)
         .onAppear {
-            vm.setChartData()
+            setChartData()
         }
+        .onChange(of: eatenItems) {
+            setChartData()
+        }
+    
+    }
+}
+
+extension PieChartView {
+    func setChartData() {
+        
+        var eaten = 0
+        for item in eatenItems {
+            eaten += Int(item.amount * Int(item.product.nutriments.energyKcal ?? 0) / 100)
+        }
+        
+        calorieEaten = [
+            ChartData(name: "eaten", number: eaten, style: Color.accentColor),
+            ChartData(name: "left", number: 2000 - eaten, style: Color.blue)
+        ]
     }
 }
 
 #Preview {
     PieChartView()
-        .environmentObject(RootViewModel())
 }

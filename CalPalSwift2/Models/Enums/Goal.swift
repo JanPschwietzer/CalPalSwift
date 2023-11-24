@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Goal: String {
+enum Goal: String, Codable {
     case LoseFast = "-0.5 kg"
     case Lose = "-0.25 kg"
     case Maintain = "0.0 kg"

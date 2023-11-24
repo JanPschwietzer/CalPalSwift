@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CalorieStatus {
+enum CalorieStatus: Codable {
     case eaten
     case total
 }

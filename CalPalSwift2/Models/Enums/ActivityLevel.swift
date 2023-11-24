@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ActivityLevel: String {
+enum ActivityLevel: String, Codable {
     case LightlyActive = "Lightly Active"
     case ModeratelyActive = "Moderately Active"
     case VeryActive = "Very Active"

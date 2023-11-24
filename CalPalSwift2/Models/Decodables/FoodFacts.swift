@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct FoodFacts: Codable, Equatable {
+struct FoodFacts: Codable {
     var product: Product
     
     enum CodingKeys: String, CodingKey {
         case product = "product"
     }
+        
 }

@@ -7,8 +7,8 @@
 
 import Foundation
 
+
 struct Product: Codable, Equatable, Identifiable {
-    
     var id: String
     var product_name: String
     var brands: String

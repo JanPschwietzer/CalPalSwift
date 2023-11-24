@@ -9,20 +9,16 @@ import SwiftUI
 
 struct RootView: View {
     
-    @StateObject var vm = RootViewModel()
-    
     var body: some View {
         NavigationStack {
             VStack {
                 TabView {
                     DashboardView()
-                        .environmentObject(vm)
                         .tabItem {
                             Image(systemName: "house.fill")
                             Text("Dashboard")
                         }
                     StatisticsView()
-                        .environmentObject(vm)
                         .tabItem {
                             Image(systemName: "calendar")
                             Text("Wochenbericht")
@@ -43,7 +39,6 @@ struct RootView: View {
                 ToolbarItem(placement: .primaryAction) {
                     NavigationLink {
                         SettingsView()
-                            .environmentObject(vm)
                     } label: {
                         Image(systemName: "gear")
                     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Nutriments: Codable, Equatable {
+struct Nutriments: Codable {
     var energyKcal: Double?
     var carbohydrates: Double?
     var fat: Double?

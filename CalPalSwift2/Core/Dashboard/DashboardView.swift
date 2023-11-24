@@ -7,12 +7,15 @@
 
 import SwiftUI
 import Charts
+import SwiftData
 
 struct DashboardView: View {
     
-    @EnvironmentObject var vm: RootViewModel
-    
+    @Query private var eatenItems: [EatenItem]
     @State private var isKeyboardVisible = false
+    @State private var searchText = ""
+    
+    @Environment(\.modelContext) var modelContext
 
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -22,18 +25,17 @@ struct DashboardView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    tabView
+                    TabView {
+                        PieChartView()
+                        PieChartView()
+                    }
+                    .tabViewStyle(.page)
+                    .indexViewStyle(.page(backgroundDisplayMode: .always))
+                    .frame(height: 400)
                     
                     Divider()
                     
-                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.breakfast] ?? [])
-                        .environmentObject(vm)
-                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.lunch] ?? [])
-                        .environmentObject(vm)
-                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.dinner] ?? [])
-                        .environmentObject(vm)
-                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.snack] ?? [])
-                        .environmentObject(vm)
+                    EatenItemsListView(type: MealTime.breakfast)
                 }
                 .padding(.horizontal)
                 .padding(.bottom, 20)
@@ -49,9 +51,6 @@ struct DashboardView: View {
                 }
             }
         }
-        .onAppear {
-            vm.setSortedItems()
-        }
         .onTapGesture {
             hideKeyboard()
         }
@@ -59,22 +58,9 @@ struct DashboardView: View {
 }
 
 extension DashboardView {
-    var tabView: some View {
-        TabView {
-            PieChartView()
-                .environmentObject(vm)
-            PieChartView()
-                .environmentObject(vm)
-        }
-        .tabViewStyle(.page)
-        .indexViewStyle(.page(backgroundDisplayMode: .always))
-        .frame(height: 400)
-    }
-    
-    
     var bottombar: some View {
         HStack {
-            TextField("Search", text: $vm.searchText)
+            TextField("Search", text: $searchText)
                 .padding(9)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
@@ -83,12 +69,14 @@ extension DashboardView {
             } label: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(
-                        vm.searchText.isEmpty ? Color.gray.opacity(0.5) : .accent
+                        searchText.isEmpty ? Color.gray.opacity(0.5) : .accent
                     )
             }
-            .disabled(vm.searchText.isEmpty)
+            .disabled(searchText.isEmpty)
             
             Button {
+                var item = OpenFoodFactsService().eatenProduct
+                modelContext.insert(item)
                 
             } label: {
                 Image(systemName: "camera")

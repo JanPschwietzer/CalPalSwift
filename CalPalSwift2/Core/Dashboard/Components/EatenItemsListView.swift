@@ -6,19 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EatenItemsListView: View {
     
-    @EnvironmentObject var vm: RootViewModel
-    let eatenItems: [EatenItem]
+    let type: MealTime
+    
+    @Environment(\.modelContext) var modelContext
+    
+    @Query var eatenItems: [EatenItem]
     
     var body: some View {
         VStack(alignment: .leading) {
-            if eatenItems.count > 0 {
-                Text(eatenItems.first!.mealTime.rawValue)
-                    .padding(.top)
-                    .foregroundStyle(Color(.systemGray))
-            }
             ForEach(eatenItems) { item in
                 HStack {
                     AsyncImage(url: URL(string: item.product.image ?? "")) { image in
@@ -34,7 +33,7 @@ struct EatenItemsListView: View {
                             .frame(width: 45, height: 45)
                     }
                     VStack(alignment: .leading) {
-                        Text("\(item.product.brands) \(item.product.product_name)")
+                        Text("\(item.product.product_name)")
                             .font(.headline)
                             .lineLimit(1)
                         Text("\(item.calories) kcal")
@@ -50,7 +49,7 @@ struct EatenItemsListView: View {
                     .padding(.trailing)
                     .foregroundStyle(.primary)
                     Button {
-                        
+                        modelContext.delete(item)
                     } label: {
                         Image(systemName: "trash.fill")
                     }
@@ -65,5 +64,4 @@ struct EatenItemsListView: View {
 
 #Preview {
     DashboardView()
-        .environmentObject(RootViewModel())
 }

@@ -14,5 +14,6 @@ struct CalPalSwift2App: App {
         WindowGroup {
             RootView()
         }
+        .modelContainer(for: [EatenItem.self, ProductDatabase.self, NutrimentsDatabase.self])
     }
 }
