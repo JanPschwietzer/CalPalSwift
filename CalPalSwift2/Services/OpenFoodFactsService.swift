@@ -49,8 +49,8 @@ class OpenFoodFactsService {
     ]
     
     static let eatenProducts: [EatenItem] = [
-        EatenItem(mealTime: MealTime.breakfast, date: Date(), amount: 100, calories: 539, product: Product(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_de.439.400.jpg", serving: "15", nutriments:
-                                                                                                            Nutriments(
+        EatenItem(mealTime: MealTime.breakfast, date: Date(), amount: 100, calories: 539, product: DbProduct(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_de.439.400.jpg", serving: "15", nutriments:
+                                                                                                                DbNutriments(
                                                                                                                 energyKcal: 539,
                                                                                                                 carbohydrates: 57.5,
                                                                                                                 fat: 30.9,
@@ -60,8 +60,8 @@ class OpenFoodFactsService {
                                                                                                                 salt: 0.107,
                                                                                                                 saturatedFat: 10.6
                                                                                                             ))),
-        EatenItem(mealTime: MealTime.lunch, date: Date(), amount: 100, calories: 539, product: Product(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_de.439.400.jpg", serving: "15", nutriments:
-                Nutriments(
+        EatenItem(mealTime: MealTime.lunch, date: Date(), amount: 100, calories: 539, product: DbProduct(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_de.439.400.jpg", serving: "15", nutriments:
+                                                                                                            DbNutriments(
                 energyKcal: 539,
                 carbohydrates: 57.5,
                 fat: 30.9,
@@ -71,8 +71,8 @@ class OpenFoodFactsService {
                 salt: 0.107,
                 saturatedFat: 10.6
                 ))),
-        EatenItem(mealTime: MealTime.dinner, date: Date(), amount: 10, calories: 54, product: Product(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_de.439.400.jpg", serving: "15", nutriments:
-                Nutriments(
+        EatenItem(mealTime: MealTime.dinner, date: Date(), amount: 10, calories: 54, product: DbProduct(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_de.439.400.jpg", serving: "15", nutriments:
+                DbNutriments(
                 energyKcal: 539,
                 carbohydrates: 57.5,
                 fat: 30.9,

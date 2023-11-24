@@ -33,6 +33,7 @@
 		4B89A50A2B0FC58000DC7CD9 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A5092B0FC58000DC7CD9 /* Goal.swift */; };
 		4B89A50D2B107F4E00DC7CD9 /* DbProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A50C2B107F4E00DC7CD9 /* DbProduct.swift */; };
 		4B89A50F2B107F7D00DC7CD9 /* DbNutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A50E2B107F7D00DC7CD9 /* DbNutriments.swift */; };
+		4BDDF29C2B10B99B00953208 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDF29A2B10B99B00953208 /* Database.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		4B89A5092B0FC58000DC7CD9 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		4B89A50C2B107F4E00DC7CD9 /* DbProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbProduct.swift; sourceTree = "<group>"; };
 		4B89A50E2B107F7D00DC7CD9 /* DbNutriments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbNutriments.swift; sourceTree = "<group>"; };
+		4BDDF29B2B10B99B00953208 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,13 +133,11 @@
 		4B89A4D12B0F735E00DC7CD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4BDDF2992B10B94700953208 /* CoreData */,
 				4B89A50B2B107EC400DC7CD9 /* Decodables */,
 				4B89A4E02B0F76EC00DC7CD9 /* Enums */,
-				4B89A4DC2B0F769F00DC7CD9 /* EatenItem.swift */,
 				4B89A4F62B0F878400DC7CD9 /* ChartData.swift */,
 				4B89A5032B0FC4F100DC7CD9 /* UserSettings.swift */,
-				4B89A50C2B107F4E00DC7CD9 /* DbProduct.swift */,
-				4B89A50E2B107F7D00DC7CD9 /* DbNutriments.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +213,17 @@
 				4B89A4D92B0F748900DC7CD9 /* Nutriments.swift */,
 			);
 			path = Decodables;
+			sourceTree = "<group>";
+		};
+		4BDDF2992B10B94700953208 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4BDDF29A2B10B99B00953208 /* Database.xcdatamodeld */,
+				4B89A4DC2B0F769F00DC7CD9 /* EatenItem.swift */,
+				4B89A50C2B107F4E00DC7CD9 /* DbProduct.swift */,
+				4B89A50E2B107F7D00DC7CD9 /* DbNutriments.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				4B89A50A2B0FC58000DC7CD9 /* Goal.swift in Sources */,
 				4B89A4F92B0FA7EB00DC7CD9 /* PieChartView.swift in Sources */,
 				4B89A50D2B107F4E00DC7CD9 /* DbProduct.swift in Sources */,
+				4BDDF29C2B10B99B00953208 /* Database.xcdatamodeld in Sources */,
 				4B89A4ED2B0F7D8F00DC7CD9 /* SettingsView.swift in Sources */,
 				4B89A4F52B0F85A000DC7CD9 /* CalorieStatus.swift in Sources */,
 				4B89A4FB2B0FA84800DC7CD9 /* EatenItemsListView.swift in Sources */,
@@ -518,6 +530,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4BDDF29A2B10B99B00953208 /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4BDDF29B2B10B99B00953208 /* Database.xcdatamodel */,
+			);
+			currentVersion = 4BDDF29B2B10B99B00953208 /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4B89A4B72B0F731900DC7CD9 /* Project object */;
 }

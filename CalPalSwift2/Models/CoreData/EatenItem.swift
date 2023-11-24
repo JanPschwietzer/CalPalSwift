@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct EatenItem: Equatable, Identifiable {
+struct EatenItem: Identifiable {
     var id = UUID()
     
     let mealTime: MealTime
     let date: Date
     let amount: Int
     let calories: Int
-    let product: Product
+    let product: DbProduct
 }

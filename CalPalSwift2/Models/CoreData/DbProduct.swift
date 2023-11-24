@@ -14,5 +14,5 @@ struct DbProduct: Identifiable {
     var image: String?
     var nutriscore: String?
     var serving: String?
-    var nutriments: Nutriments
+    var nutriments: DbNutriments
 }
