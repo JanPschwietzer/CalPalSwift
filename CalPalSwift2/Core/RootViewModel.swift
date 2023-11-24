@@ -16,10 +16,11 @@ class RootViewModel: ObservableObject {
             setSortedItems()
         }
     }
+    @Published var userSettings: UserSettings
     @Published var calorieEaten: [ChartData]
     @Published var nutritionsEaten: [ChartData]
     @Published var sortedItems: [MealTime: [EatenItem]]
-    @Published var userSettings: UserSettings
+    @Published var searchText: String = ""
     
     init() {
         self.eatenItems = OpenFoodFactsService.eatenProducts
@@ -27,18 +28,9 @@ class RootViewModel: ObservableObject {
         nutritionsEaten = []
         sortedItems = [:]
         
-        userSettings = UserSettings(
-            gender: Gender.Male,
-            birthday: Date(),
-            height: 183,
-            weight: 85,
-            activityLevel: ActivityLevel.LightlyActive,
-            goal: Goal.Maintain,
-            calories: 2300
-        )
+        userSettings = UserSettings(gender: Gender.Male, birthday: Date(), height: 160, weight: 70, activityLevel: ActivityLevel.ModeratelyActive, goal: Goal.Maintain, calories: 2000)
     }
 }
-
 
 /*
  
@@ -78,6 +70,31 @@ extension RootViewModel {
  
  */
 extension RootViewModel {
+    
+    func saveUserSettings() {
+        UserDefaults.standard.set(true, forKey: "userSettingsSaved")
+        UserDefaults.standard.set(userSettings.gender.rawValue, forKey: "gender")
+        UserDefaults.standard.set(userSettings.birthday.ISO8601Format(), forKey: "birthday")
+        UserDefaults.standard.set(userSettings.height, forKey: "height")
+        UserDefaults.standard.set(userSettings.weight, forKey: "weight")
+        UserDefaults.standard.set(userSettings.activityLevel.rawValue, forKey: "activityLevel")
+        UserDefaults.standard.set(userSettings.goal.rawValue, forKey: "goal")
+        UserDefaults.standard.set(userSettings.calories, forKey: "calories")
+        
+        debugPrint("UserSettings saved!")
+    }
+    func getUserSettings() {
+        userSettings = UserSettings(
+            gender: Gender(rawValue: UserDefaults.standard.string(forKey: "gender") ?? Gender.Male.rawValue) ?? Gender.Male,
+            birthday: ISO8601DateFormatter().date(from: UserDefaults.standard.string(forKey: "birthday") ?? Date().ISO8601Format()) ?? Date(),
+            height: UserDefaults.standard.integer(forKey: "height"),
+            weight: UserDefaults.standard.integer(forKey: "weight"),
+            activityLevel: ActivityLevel(rawValue: UserDefaults.standard.string(forKey: "activityLevel") ?? ActivityLevel.ModeratelyActive.rawValue) ?? ActivityLevel.ModeratelyActive,
+            goal: Goal(rawValue: UserDefaults.standard.string(forKey: "goal") ?? Goal.Maintain.rawValue) ?? Goal.Maintain,
+            calories: UserDefaults.standard.integer(forKey: "calories")
+        )
+    }
+    
     func incActivityLevel() {
         switch userSettings.activityLevel {
         case .LightlyActive:

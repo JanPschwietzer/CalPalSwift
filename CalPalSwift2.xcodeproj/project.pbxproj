@@ -31,6 +31,8 @@
 		4B89A5062B0FC52900DC7CD9 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A5052B0FC52900DC7CD9 /* Gender.swift */; };
 		4B89A5082B0FC57000DC7CD9 /* ActivityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A5072B0FC57000DC7CD9 /* ActivityLevel.swift */; };
 		4B89A50A2B0FC58000DC7CD9 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A5092B0FC58000DC7CD9 /* Goal.swift */; };
+		4B89A50D2B107F4E00DC7CD9 /* DbProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A50C2B107F4E00DC7CD9 /* DbProduct.swift */; };
+		4B89A50F2B107F7D00DC7CD9 /* DbNutriments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A50E2B107F7D00DC7CD9 /* DbNutriments.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		4B89A5052B0FC52900DC7CD9 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		4B89A5072B0FC57000DC7CD9 /* ActivityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLevel.swift; sourceTree = "<group>"; };
 		4B89A5092B0FC58000DC7CD9 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		4B89A50C2B107F4E00DC7CD9 /* DbProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbProduct.swift; sourceTree = "<group>"; };
+		4B89A50E2B107F7D00DC7CD9 /* DbNutriments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbNutriments.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,13 +131,13 @@
 		4B89A4D12B0F735E00DC7CD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4B89A50B2B107EC400DC7CD9 /* Decodables */,
 				4B89A4E02B0F76EC00DC7CD9 /* Enums */,
-				4B89A4D52B0F73A000DC7CD9 /* FoodFacts.swift */,
-				4B89A4D72B0F746300DC7CD9 /* Product.swift */,
-				4B89A4D92B0F748900DC7CD9 /* Nutriments.swift */,
 				4B89A4DC2B0F769F00DC7CD9 /* EatenItem.swift */,
 				4B89A4F62B0F878400DC7CD9 /* ChartData.swift */,
 				4B89A5032B0FC4F100DC7CD9 /* UserSettings.swift */,
+				4B89A50C2B107F4E00DC7CD9 /* DbProduct.swift */,
+				4B89A50E2B107F7D00DC7CD9 /* DbNutriments.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +203,16 @@
 				4B89A4FA2B0FA84800DC7CD9 /* EatenItemsListView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		4B89A50B2B107EC400DC7CD9 /* Decodables */ = {
+			isa = PBXGroup;
+			children = (
+				4B89A4D52B0F73A000DC7CD9 /* FoodFacts.swift */,
+				4B89A4D72B0F746300DC7CD9 /* Product.swift */,
+				4B89A4D92B0F748900DC7CD9 /* Nutriments.swift */,
+			);
+			path = Decodables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,12 +291,14 @@
 				4B89A5082B0FC57000DC7CD9 /* ActivityLevel.swift in Sources */,
 				4B89A4DD2B0F769F00DC7CD9 /* EatenItem.swift in Sources */,
 				4B89A4DA2B0F748900DC7CD9 /* Nutriments.swift in Sources */,
+				4B89A50F2B107F7D00DC7CD9 /* DbNutriments.swift in Sources */,
 				4B89A4D82B0F746300DC7CD9 /* Product.swift in Sources */,
 				4B89A4F72B0F878400DC7CD9 /* ChartData.swift in Sources */,
 				4B89A4C32B0F731900DC7CD9 /* CalPalSwift2App.swift in Sources */,
 				4B89A5062B0FC52900DC7CD9 /* Gender.swift in Sources */,
 				4B89A50A2B0FC58000DC7CD9 /* Goal.swift in Sources */,
 				4B89A4F92B0FA7EB00DC7CD9 /* PieChartView.swift in Sources */,
+				4B89A50D2B107F4E00DC7CD9 /* DbProduct.swift in Sources */,
 				4B89A4ED2B0F7D8F00DC7CD9 /* SettingsView.swift in Sources */,
 				4B89A4F52B0F85A000DC7CD9 /* CalorieStatus.swift in Sources */,
 				4B89A4FB2B0FA84800DC7CD9 /* EatenItemsListView.swift in Sources */,

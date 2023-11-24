@@ -27,12 +27,6 @@ struct RootView: View {
                             Image(systemName: "calendar")
                             Text("Wochenbericht")
                         }
-                    SettingsView()
-                        .environmentObject(vm)
-                        .tabItem {
-                            Image(systemName: "gear")
-                            Text("Settings")
-                        }
                 }
             }
             .toolbarTitleDisplayMode(.inline)
@@ -45,6 +39,14 @@ struct RootView: View {
                             .padding(20)
                     }
                     .padding(.all, 20)
+                }
+                ToolbarItem(placement: .primaryAction) {
+                    NavigationLink {
+                        SettingsView()
+                            .environmentObject(vm)
+                    } label: {
+                        Image(systemName: "gear")
+                    }
                 }
             }
             .toolbarColorScheme(.dark, for: .navigationBar)

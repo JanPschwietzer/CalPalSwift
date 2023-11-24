@@ -13,7 +13,6 @@ struct DashboardView: View {
     @EnvironmentObject var vm: RootViewModel
     @Environment(\.defaultMinListRowHeight) var minRowHeight
     
-    @State private var searchText = ""
     @State private var isKeyboardVisible = false
     @State private var keyboardHeight: CGFloat = 7
     @State private var isPresentingScanner = false
@@ -32,13 +31,13 @@ struct DashboardView: View {
                         
                         Divider()
                         
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.breakfast] ?? [], label: MealTime.breakfast.toString)
+                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.breakfast] ?? [])
                             .environmentObject(vm)
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.lunch] ?? [], label: MealTime.breakfast.toString)
+                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.lunch] ?? [])
                             .environmentObject(vm)
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.dinner] ?? [], label: MealTime.breakfast.toString)
+                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.dinner] ?? [])
                             .environmentObject(vm)
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.snack] ?? [], label: MealTime.breakfast.toString)
+                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.snack] ?? [])
                             .environmentObject(vm)
                     }
                     .padding(.horizontal)
@@ -91,7 +90,7 @@ extension DashboardView {
     
     var bottombar: some View {
         HStack {
-            TextField("Search", text: $searchText)
+            TextField("Search", text: $vm.searchText)
                 .padding(9)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
@@ -101,10 +100,10 @@ extension DashboardView {
             } label: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(
-                        searchText.isEmpty ? Color.gray.opacity(0.5) : .accent
+                        vm.searchText.isEmpty ? Color.gray.opacity(0.5) : .accent
                     )
             }
-            .disabled(searchText.isEmpty)
+            .disabled(vm.searchText.isEmpty)
             
             Button {
                 

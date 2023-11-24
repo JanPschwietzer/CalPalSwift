@@ -11,12 +11,11 @@ struct EatenItemsListView: View {
     
     @EnvironmentObject var vm: RootViewModel
     let eatenItems: [EatenItem]
-    let label: String
     
     var body: some View {
         VStack(alignment: .leading) {
             if eatenItems.count > 0 {
-                Text(eatenItems.first!.mealTime.toString)
+                Text(eatenItems.first!.mealTime.rawValue)
                     .padding(.top)
                     .foregroundStyle(Color(.systemGray))
             }

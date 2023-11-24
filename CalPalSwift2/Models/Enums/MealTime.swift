@@ -7,19 +7,9 @@
 
 import Foundation
 
-enum MealTime {
-    case breakfast
-    case lunch
-    case dinner
-    case snack
-    
-    var toString : String {
-      switch self {
-      // Use Internationalization, as appropriate.
-      case .breakfast: return "Breakfast"
-      case .lunch: return "Lunch"
-      case .dinner: return "Dinner"
-      case .snack: return "Snack"
-      }
-    }
+enum MealTime: String {
+    case breakfast = "Breakfast"
+    case lunch = "Lunch"
+    case dinner = "Dinner"
+    case snack = "Snack"
 }

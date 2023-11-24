@@ -10,15 +10,16 @@ import SwiftUI
 struct SettingsView: View {
     
     @EnvironmentObject var vm: RootViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Personal Info")) {
                     Picker("Sex", selection: $vm.userSettings.gender,
-                        content: {
+                           content: {
                         ForEach([Gender.Male, Gender.Female], id: \.self) { gender in
-                            Text(gender == Gender.Male ? "Male" : "Female")
+                            Text(gender.rawValue)
                         }
                     })
                     DatePicker("Birthday", selection: $vm.userSettings.birthday, in: ...(Date() - TimeInterval(8 * 3.156e+7)), displayedComponents: .date)
@@ -35,7 +36,7 @@ struct SettingsView: View {
                 }
                 Section(header: Text("Activity Level")) {
                     Stepper {
-                        Text(vm.userSettings.activityLevel.toString)
+                        Text(vm.userSettings.activityLevel.rawValue)
                     } onIncrement: {
                         vm.incActivityLevel()
                     } onDecrement: {
@@ -44,7 +45,7 @@ struct SettingsView: View {
                 }
                 Section(header: Text("Diet Goal")) {
                     Stepper {
-                        Text(vm.userSettings.goal.toString)
+                        Text(vm.userSettings.goal.rawValue)
                     } onIncrement: {
                         vm.incGoal()
                     } onDecrement: {
@@ -52,11 +53,20 @@ struct SettingsView: View {
                     }
                     Text("Your daily calory intake: \(vm.userSettings.calories)")
                 }
+                Button {
+                    vm.saveUserSettings()
+                    dismiss()
+                } label: {
+                    Text("Save")
+                }
+
             }
             .navigationTitle("Settings")
+            .onAppear {
+                vm.getUserSettings()
+            }
         }
     }
-    
 }
 
 #Preview {

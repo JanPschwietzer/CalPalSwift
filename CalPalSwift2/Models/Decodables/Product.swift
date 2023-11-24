@@ -9,6 +9,7 @@ import Foundation
 
 struct Product: Codable, Equatable, Identifiable {
     
+    var id: String
     var product_name: String
     var brands: String
     var image: String?
@@ -16,15 +17,12 @@ struct Product: Codable, Equatable, Identifiable {
     var serving: String?
     var nutriments: Nutriments
     
-    var id: String {
-        product_name + brands
-    }
-    
     static func == (lhs: Product, rhs: Product) -> Bool {
         return lhs.id == rhs.id
     }
     
     enum CodingKeys: String, CodingKey {
+        case id = "_id"
         case product_name = "product_name"
         case brands = "brands"
         case image = "image_front_url"
