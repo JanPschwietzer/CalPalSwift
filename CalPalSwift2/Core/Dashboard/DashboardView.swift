@@ -11,65 +11,49 @@ import Charts
 struct DashboardView: View {
     
     @EnvironmentObject var vm: RootViewModel
-    @Environment(\.defaultMinListRowHeight) var minRowHeight
     
     @State private var isKeyboardVisible = false
-    @State private var keyboardHeight: CGFloat = 7
-    @State private var isPresentingScanner = false
-    @State private var isPresentingAddProductView = false
 
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            NavigationView {
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        tabView
-                        
-                        Divider()
-                        
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.breakfast] ?? [])
-                            .environmentObject(vm)
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.lunch] ?? [])
-                            .environmentObject(vm)
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.dinner] ?? [])
-                            .environmentObject(vm)
-                        EatenItemsListView(eatenItems: vm.sortedItems[MealTime.snack] ?? [])
-                            .environmentObject(vm)
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom, 20)
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading) {
+                    tabView
+                    
+                    Divider()
+                    
+                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.breakfast] ?? [])
+                        .environmentObject(vm)
+                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.lunch] ?? [])
+                        .environmentObject(vm)
+                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.dinner] ?? [])
+                        .environmentObject(vm)
+                    EatenItemsListView(eatenItems: vm.sortedItems[MealTime.snack] ?? [])
+                        .environmentObject(vm)
                 }
-                .toolbar {
-                    ToolbarItem(placement: .bottomBar) {
-                        bottombar
-                    }
+                .padding(.horizontal)
+                .padding(.bottom, 20)
+            }
+            .toolbar {
+                ToolbarItem(placement: .keyboard) {
+                    bottombar
                 }
             }
-            .onAppear {
-                vm.setSortedItems()
-            }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { (notification) in
-                guard let userInfo = notification.userInfo,
-                      let keyboardRect = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
-                else { return }
-                withAnimation {
-                    self.keyboardHeight = keyboardRect.height + 7 - geometry.safeAreaInsets.bottom
-                    self.isKeyboardVisible = true
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    bottombar
                 }
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-                withAnimation {
-                    self.keyboardHeight = 7
-                    self.isKeyboardVisible = false
-                }
-            }
-            .onTapGesture {
-                hideKeyboard()
-            }
+        }
+        .onAppear {
+            vm.setSortedItems()
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
     }
 }
@@ -94,7 +78,6 @@ extension DashboardView {
                 .padding(9)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
-                .keyboardType(.numberPad)
             Button {
                 isKeyboardVisible ? hideKeyboard() : nil
             } label: {
@@ -117,7 +100,7 @@ extension DashboardView {
         .padding()
         .frame(width: UIScreen.main.bounds.size.width, height: 60, alignment: .center)
         .background(.thinMaterial)
-        .offset(y: -keyboardHeight)
+        .offset(y: -7)
     }
 }
 
