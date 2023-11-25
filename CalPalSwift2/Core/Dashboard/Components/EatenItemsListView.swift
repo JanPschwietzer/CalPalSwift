@@ -36,7 +36,7 @@ struct EatenItemsListView: View {
                         Text("\(item.product.product_name)")
                             .font(.headline)
                             .lineLimit(1)
-                        Text("\(item.calories) kcal")
+                        Text("\(Int(Double(item.amount) * (item.product.nutriments.energyKcal ?? 0) / 100)) kcal")
                             .font(.subheadline)
                     }
                     Spacer()

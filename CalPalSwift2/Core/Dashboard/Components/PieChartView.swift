@@ -15,6 +15,7 @@ struct PieChartView: View {
     @State private var calorieEaten = [ChartData]()
     
     let calories: Int
+    @State private var colors: KeyValuePairs<String, Color> = ["eaten" : Color(.accent),"left": Color(.gray)]
     
     var body: some View {
         Chart {
@@ -35,9 +36,7 @@ struct PieChartView: View {
                 }
             }
         }
-        .chartForegroundStyleScale([
-            "eaten" : Color(.accent),
-            "left": Color(.gray)])
+        .chartForegroundStyleScale(colors)
         .frame(height: 300, alignment: .top)
         .onAppear {
             setChartData()
@@ -54,13 +53,22 @@ extension PieChartView {
         
         var eaten = 0
         for item in eatenItems {
-            eaten += Int(item.amount * Int(item.product.nutriments.energyKcal ?? 0) / 100)
+            eaten += Int(Double(item.amount) * (item.product.nutriments.energyKcal ?? 0) / 100)
         }
         
-        calorieEaten = [
-            ChartData(name: "eaten", number: Double(eaten), style: Color.accentColor),
-            ChartData(name: "left", number: Double(calories - eaten), style: Color.blue)
-        ]
+        if calories < eaten {
+            calorieEaten = [
+                ChartData(name: "left", number: Double(abs(calories - eaten))),
+                ChartData(name: "eaten", number: Double(calories))
+            ]
+            colors = ["eaten" : Color(.gray),"left": Color(.red)]
+        } else {
+            calorieEaten = [
+                ChartData(name: "eaten", number: Double(eaten)),
+                ChartData(name: "left", number: Double(calories - eaten))
+            ]
+            colors = ["eaten" : Color(.accent),"left": Color(.gray)]
+        }
     }
 }
 

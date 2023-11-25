@@ -49,7 +49,7 @@ class OpenFoodFactsService {
     ]
     
     let eatenProduct =
-        EatenItem(mealTime: MealTime.breakfast, date: Date(), amount: 100, calories: 539, product: ProductDatabase(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", serving: "15", nutriments: NutrimentsDatabase(
+    EatenItem(mealTime: MealTime.breakfast, date: Date(), amount: Int.random(in: 1...50), calories: 539, product: ProductDatabase(id: "3017620422003", product_name: "Nutella", brands: "Ferrero", image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_de.439.400.jpg", serving: "15", nutriments: NutrimentsDatabase(
             energyKcal: 539,
             carbohydrates: 57.5,
             fat: 30.9,
