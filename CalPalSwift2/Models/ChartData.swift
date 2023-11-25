@@ -13,6 +13,6 @@ struct ChartData: Identifiable {
     var id = UUID()
     
     var name: String
-    var number: Int
-    var style: any ShapeStyle
+    var number: Double
+    var style: (any ShapeStyle)?
 }

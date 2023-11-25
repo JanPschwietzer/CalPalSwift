@@ -29,6 +29,7 @@ struct DashboardView: View {
                 VStack(alignment: .leading) {
                     TabView {
                         PieChartView(calories: calories)
+                        BarChartView()
                     }
                     .tabViewStyle(.page)
                     .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -74,7 +75,6 @@ extension DashboardView {
                     )
             }
             .disabled(searchText.isEmpty)
-            
             Button {
                 let item = OpenFoodFactsService().eatenProduct
                 modelContext.insert(item)

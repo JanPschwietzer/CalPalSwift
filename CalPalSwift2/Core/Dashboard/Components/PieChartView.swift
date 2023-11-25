@@ -27,7 +27,7 @@ struct PieChartView: View {
                 .cornerRadius(15)
                 .foregroundStyle(by: .value("Type", item.name))
                 .annotation(position: .overlay) {
-                    Text("\(item.number) kcal")
+                    Text("\(item.number.formatted()) kcal")
                         .font(.headline)
                         .padding(4)
                         .background()
@@ -58,8 +58,8 @@ extension PieChartView {
         }
         
         calorieEaten = [
-            ChartData(name: "eaten", number: eaten, style: Color.accentColor),
-            ChartData(name: "left", number: calories - eaten, style: Color.blue)
+            ChartData(name: "eaten", number: Double(eaten), style: Color.accentColor),
+            ChartData(name: "left", number: Double(calories - eaten), style: Color.blue)
         ]
     }
 }
