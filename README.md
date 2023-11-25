@@ -2,6 +2,7 @@
 Willkommen in der Welt von CalPal - deiner ultimativen Kalorientracking-App für iOS! Wir präsentieren eine intelligente und benutzerfreundliche Anwendung, die dir hilft, deine Gesundheits- und Fitnessziele zu erreichen, indem sie dir dabei hilft, deine tägliche Kalorienaufnahme zu verfolgen und zu optimieren.
 
 |![Dashboard](./screenshots/1_a.png)|![Dashboard (DarkMode)](./screenshots/1_b.png)|![Kalozienziel überschritten](./screenshots/1_a2.png)|![Kalozienziel überschritten (DarkMode)](./screenshots/1_b2.png)|
+|--|--|--|--|
 |Das Dashboard in normaler Darstellung|Das Dashboard in dunkler Darstellung|Das Dashboard in normaler Darstellung wenn das Kalorienziel überschritten wurde|Das Dashboard in dunkler Darstellung wenn das Kalorienziel überschritten wurde|
 |--|--|--|--|
 
