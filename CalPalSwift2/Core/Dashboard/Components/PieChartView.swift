@@ -14,6 +14,8 @@ struct PieChartView: View {
     @Query private var eatenItems: [EatenItem]
     @State private var calorieEaten = [ChartData]()
     
+    let calories: Int
+    
     var body: some View {
         Chart {
             ForEach(calorieEaten) { item in
@@ -57,11 +59,11 @@ extension PieChartView {
         
         calorieEaten = [
             ChartData(name: "eaten", number: eaten, style: Color.accentColor),
-            ChartData(name: "left", number: 2000 - eaten, style: Color.blue)
+            ChartData(name: "left", number: calories - eaten, style: Color.blue)
         ]
     }
 }
 
 #Preview {
-    PieChartView()
+    PieChartView(calories: 2000)
 }

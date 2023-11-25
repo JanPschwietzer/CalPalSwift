@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserSettings {
+struct UserSettings: Equatable {
     var gender: Gender
     var birthday: Date
     var height: Int

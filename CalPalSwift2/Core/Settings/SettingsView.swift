@@ -12,7 +12,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     
     @State private var userSettings = UserSettings(
-        gender: Gender.Male, birthday: Date(), height: 160, weight: 70, activityLevel: ActivityLevel.ModeratelyActive, goal: Goal.Maintain, calories: 2000)
+        gender: Gender.Male, birthday: Date().addingTimeInterval(-(365 * 24 * 60 * 60 * 5)), height: 160, weight: 70, activityLevel: ActivityLevel.ModeratelyActive, goal: Goal.Maintain, calories: 2000)
     
     var body: some View {
         NavigationView {
@@ -67,12 +67,84 @@ struct SettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 getUserSettings()
+                calculateCalRequirement()
+            }
+            .onChange(of: userSettings) { _, _ in
+                calculateCalRequirement()
             }
         }
     }
 }
 
 extension SettingsView {
+    
+    func calculateCalRequirement() {
+        let age = Calendar.current.dateComponents([.year], from: userSettings.birthday, to: Date()).year!
+        
+        if userSettings.gender == Gender.Male {
+            let weightCalculation = 13.75 * Double(userSettings.weight)
+            let heightCalculation = 5 * Double(userSettings.height)
+            let ageCalculation = 6.75 * Double(age)
+            
+            let baseCalories = (66.47 + weightCalculation + heightCalculation - ageCalculation) / 24
+            let normalHours = baseCalories * 18.5
+            let activeHours = baseCalories * 5.5
+            
+            switch userSettings.activityLevel {
+            case .LightlyActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 1.4))
+                return
+            case .ModeratelyActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 1.6))
+                return
+            case .VeryActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 1.8))
+                return
+            case .ExtremelyActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 2))
+                return
+            }
+        } else {
+            let weightCalculation = 9.56 * Double(userSettings.weight)
+            let heightCalculation = 1.85 * Double(userSettings.height)
+            let ageCalculation = 4.68 * Double(age)
+            
+            let baseCalories = (655.1 + weightCalculation + heightCalculation - ageCalculation) / 24
+            let normalHours = baseCalories * 18.5
+            let activeHours = baseCalories * 5.5
+            
+            switch userSettings.activityLevel {
+            case .LightlyActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 1.4))
+                return
+            case .ModeratelyActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 1.6))
+                return
+            case .VeryActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 1.8))
+                return
+            case .ExtremelyActive:
+                userSettings.calories = addSurplus(number: Int(normalHours + activeHours * 2))
+                return
+            }
+        }
+    }
+    
+    func addSurplus(number: Int) -> Int {
+        switch userSettings.goal {
+        case .LoseFast:
+            return number - 500
+        case .Lose:
+            return number - 250
+        case .Maintain:
+            return number
+        case .Gain:
+            return number + 250
+        case .GainFast:
+            return number + 500
+        }
+    }
+    
     func saveUserSettings() {
         UserDefaults.standard.set(true, forKey: "userSettingsSaved")
         UserDefaults.standard.set(userSettings.gender.rawValue, forKey: "gender")
@@ -82,8 +154,6 @@ extension SettingsView {
         UserDefaults.standard.set(userSettings.activityLevel.rawValue, forKey: "activityLevel")
         UserDefaults.standard.set(userSettings.goal.rawValue, forKey: "goal")
         UserDefaults.standard.set(userSettings.calories, forKey: "calories")
-        
-        debugPrint("UserSettings saved!")
     }
     func getUserSettings() {
         userSettings = UserSettings(

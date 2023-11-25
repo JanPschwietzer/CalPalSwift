@@ -15,6 +15,8 @@ struct DashboardView: View {
     @State private var isKeyboardVisible = false
     @State private var searchText = ""
     
+    let calories =  UserDefaults.standard.integer(forKey: "calories") == 0 ? 2000 : UserDefaults.standard.integer(forKey: "calories")
+    
     @Environment(\.modelContext) var modelContext
 
     func hideKeyboard() {
@@ -26,8 +28,7 @@ struct DashboardView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     TabView {
-                        PieChartView()
-                        PieChartView()
+                        PieChartView(calories: calories)
                     }
                     .tabViewStyle(.page)
                     .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -75,7 +76,7 @@ extension DashboardView {
             .disabled(searchText.isEmpty)
             
             Button {
-                var item = OpenFoodFactsService().eatenProduct
+                let item = OpenFoodFactsService().eatenProduct
                 modelContext.insert(item)
                 
             } label: {
