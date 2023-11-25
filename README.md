@@ -4,7 +4,6 @@ Willkommen in der Welt von CalPal - deiner ultimativen Kalorientracking-App für
 |![Dashboard](./screenshots/1_a.png)|![Dashboard (DarkMode)](./screenshots/1_b.png)|![Kalozienziel überschritten](./screenshots/1_a2.png)|![Kalozienziel überschritten (DarkMode)](./screenshots/1_b2.png)|
 |--|--|--|--|
 |Das Dashboard in normaler Darstellung|Das Dashboard in dunkler Darstellung|Das Dashboard in normaler Darstellung wenn das Kalorienziel überschritten wurde|Das Dashboard in dunkler Darstellung wenn das Kalorienziel überschritten wurde|
-|--|--|--|--|
 
 ## Intuitives Tracking
 CalPal bietet eine nahtlose Benutzererfahrung. Scanne einfach Barcodes von Lebensmitteln, wähle aus einer umfangreichen Datenbank oder füge Mahlzeiten manuell hinzu. Verfolge Kalorien, Makronährstoffe und mehr, um ein genaues Bild deiner Ernährung zu erhalten.
