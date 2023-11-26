@@ -18,8 +18,8 @@ class ProductDatabase {
     var serving: String?
     var nutriments: NutrimentsDatabase
     
-    init(id: String, product_name: String, brands: String, image: String? = nil, nutriscore: String? = nil, serving: String? = nil, nutriments: NutrimentsDatabase) {
-        self.id = id
+    init(id: String?, product_name: String, brands: String, image: String? = nil, nutriscore: String? = nil, serving: String? = nil, nutriments: NutrimentsDatabase) {
+        self.id = id ?? UUID().uuidString
         self.product_name = product_name
         self.brands = brands
         self.image = image

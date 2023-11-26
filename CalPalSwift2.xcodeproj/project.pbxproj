@@ -35,6 +35,9 @@
 		4BA8CC6A2B12479D00CEBF95 /* 2_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA8CC692B12479D00CEBF95 /* 2_b.png */; };
 		4BA8CC6D2B12484100CEBF95 /* 1_b2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA8CC6B2B12484000CEBF95 /* 1_b2.png */; };
 		4BA8CC6E2B12484100CEBF95 /* 1_a2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA8CC6C2B12484100CEBF95 /* 1_a2.png */; };
+		4BA8CC712B135F3600CEBF95 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA8CC702B135F3600CEBF95 /* AddProductView.swift */; };
+		4BA8CC732B136A9600CEBF95 /* 3_a.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA8CC722B136A9600CEBF95 /* 3_a.png */; };
+		4BA8CC752B136A9900CEBF95 /* 3_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA8CC742B136A9900CEBF95 /* 3_b.png */; };
 		4BDDF2A62B110BC600953208 /* ProductDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDF2A52B110BC600953208 /* ProductDatabase.swift */; };
 		4BDDF2A82B110BFE00953208 /* NutrimentsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDF2A72B110BFE00953208 /* NutrimentsDatabase.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +73,9 @@
 		4BA8CC692B12479D00CEBF95 /* 2_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_b.png; sourceTree = "<group>"; };
 		4BA8CC6B2B12484000CEBF95 /* 1_b2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_b2.png; sourceTree = "<group>"; };
 		4BA8CC6C2B12484100CEBF95 /* 1_a2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_a2.png; sourceTree = "<group>"; };
+		4BA8CC702B135F3600CEBF95 /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
+		4BA8CC722B136A9600CEBF95 /* 3_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_a.png; sourceTree = "<group>"; };
+		4BA8CC742B136A9900CEBF95 /* 3_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_b.png; sourceTree = "<group>"; };
 		4BDDF2A52B110BC600953208 /* ProductDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDatabase.swift; sourceTree = "<group>"; };
 		4BDDF2A72B110BFE00953208 /* NutrimentsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrimentsDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +178,7 @@
 		4B89A4E32B0F780D00DC7CD9 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				4BA8CC6F2B135F2500CEBF95 /* AddProduct */,
 				4B89A5022B0FC48B00DC7CD9 /* Components */,
 				4B89A4E62B0F783100DC7CD9 /* DashboardView.swift */,
 			);
@@ -203,6 +210,8 @@
 				4B89A5002B0FC31600DC7CD9 /* 1_b.png */,
 				4BA8CC672B12478B00CEBF95 /* 2_a.png */,
 				4BA8CC692B12479D00CEBF95 /* 2_b.png */,
+				4BA8CC722B136A9600CEBF95 /* 3_a.png */,
+				4BA8CC742B136A9900CEBF95 /* 3_b.png */,
 			);
 			path = screenshots;
 			sourceTree = "<group>";
@@ -225,6 +234,14 @@
 				4B89A4D92B0F748900DC7CD9 /* Nutriments.swift */,
 			);
 			path = Decodables;
+			sourceTree = "<group>";
+		};
+		4BA8CC6F2B135F2500CEBF95 /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				4BA8CC702B135F3600CEBF95 /* AddProductView.swift */,
+			);
+			path = AddProduct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,11 +304,13 @@
 			files = (
 				4BA8CC6D2B12484100CEBF95 /* 1_b2.png in Resources */,
 				4B89A4FF2B0FC30300DC7CD9 /* 1_a.png in Resources */,
+				4BA8CC752B136A9900CEBF95 /* 3_b.png in Resources */,
 				4BA8CC6E2B12484100CEBF95 /* 1_a2.png in Resources */,
 				4BA8CC6A2B12479D00CEBF95 /* 2_b.png in Resources */,
 				4B89A4CA2B0F731A00DC7CD9 /* Preview Assets.xcassets in Resources */,
 				4BA8CC682B12478B00CEBF95 /* 2_a.png in Resources */,
 				4B89A5012B0FC31600DC7CD9 /* 1_b.png in Resources */,
+				4BA8CC732B136A9600CEBF95 /* 3_a.png in Resources */,
 				4B89A4C72B0F731A00DC7CD9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA8CC712B135F3600CEBF95 /* AddProductView.swift in Sources */,
 				4B89A4D42B0F738600DC7CD9 /* OpenFoodFactsService.swift in Sources */,
 				4B89A5082B0FC57000DC7CD9 /* ActivityLevel.swift in Sources */,
 				4B89A4DD2B0F769F00DC7CD9 /* EatenItem.swift in Sources */,

@@ -14,7 +14,7 @@ class EatenItem {
     var date: Date
     var amount: Int
     var calories: Int
-    let product: ProductDatabase
+    var product: ProductDatabase
     
     init(mealTime: MealTime, date: Date, amount: Int, calories: Int, product: ProductDatabase) {
         self.mealTime = mealTime

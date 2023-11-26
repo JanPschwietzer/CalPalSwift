@@ -12,12 +12,13 @@ import SwiftData
 struct DashboardView: View {
     
     @Query private var eatenItems: [EatenItem]
+    @Environment(\.modelContext) var modelContext
+    
     @State private var isKeyboardVisible = false
     @State private var searchText = ""
+    @State private var showAddProductView = false
     
     let calories =  UserDefaults.standard.integer(forKey: "calories") == 0 ? 2000 : UserDefaults.standard.integer(forKey: "calories")
-    
-    @Environment(\.modelContext) var modelContext
 
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -52,6 +53,9 @@ struct DashboardView: View {
                     bottombar
                 }
             }
+            .fullScreenCover(isPresented: $showAddProductView) {
+                AddProductView()
+            }
         }
         .onTapGesture {
             hideKeyboard()
@@ -68,6 +72,7 @@ extension DashboardView {
                 .cornerRadius(10)
             Button {
                 isKeyboardVisible ? hideKeyboard() : nil
+                showAddProductView = true
             } label: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(
@@ -76,9 +81,7 @@ extension DashboardView {
             }
             .disabled(searchText.isEmpty)
             Button {
-                let item = OpenFoodFactsService().eatenProduct
-                modelContext.insert(item)
-                
+                showAddProductView = true
             } label: {
                 Image(systemName: "camera")
                     .foregroundColor(isKeyboardVisible ? Color.gray.opacity(0.5) : .accent

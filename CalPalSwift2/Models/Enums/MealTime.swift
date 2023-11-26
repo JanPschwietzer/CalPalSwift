@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MealTime: String, Codable {
+enum MealTime: String, Codable, CaseIterable {
     case breakfast = "Breakfast"
     case lunch = "Lunch"
     case dinner = "Dinner"

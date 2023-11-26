@@ -39,8 +39,10 @@ struct RootView: View {
                 ToolbarItem(placement: .primaryAction) {
                     NavigationLink {
                         SettingsView()
+                            .navigationBarBackButtonHidden(true)
                     } label: {
                         Image(systemName: "gear")
+                            .foregroundStyle(.white)
                     }
                 }
             }

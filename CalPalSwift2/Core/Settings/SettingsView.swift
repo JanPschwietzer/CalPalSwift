@@ -55,16 +55,34 @@ struct SettingsView: View {
                     }
                     Text("Your daily calory intake: \(userSettings.calories)")
                 }
-                Button {
-                    saveUserSettings()
-                    dismiss()
-                } label: {
-                    Text("Save")
-                }
-
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.backward")
+                            Text("Back")
+                        }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        saveUserSettings()
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Text("Save")
+                            Image(systemName: "chevron.forward")
+                        }
+                    }
+                }
+            }
             .onAppear {
                 getUserSettings()
                 calculateCalRequirement()
