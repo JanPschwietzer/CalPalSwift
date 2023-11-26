@@ -18,11 +18,7 @@ struct DashboardView: View {
     @State private var searchText = ""
     @State private var showAddProductView = false
     
-    let calories =  UserDefaults.standard.integer(forKey: "calories") == 0 ? 2000 : UserDefaults.standard.integer(forKey: "calories")
-
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
+    @State private var calories = 0
     
     var body: some View {
         NavigationView {
@@ -55,10 +51,16 @@ struct DashboardView: View {
             }
             .fullScreenCover(isPresented: $showAddProductView) {
                 AddProductView()
+                    .onDisappear {
+                        getCalories()
+                    }
             }
         }
         .onTapGesture {
             hideKeyboard()
+        }
+        .onAppear {
+            getCalories()
         }
     }
 }
@@ -93,6 +95,16 @@ extension DashboardView {
         .frame(width: UIScreen.main.bounds.size.width, height: 60, alignment: .center)
         .background(.thinMaterial)
         .offset(y: -7)
+    }
+}
+
+extension DashboardView {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    func getCalories() {
+        calories =  UserDefaults.standard.integer(forKey: "calories") == 0 ? 2000 : UserDefaults.standard.integer(forKey: "calories")
     }
 }
 
