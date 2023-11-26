@@ -52,7 +52,9 @@ extension PieChartView {
     func setChartData() {
         
         var eaten = 0
-        for item in eatenItems {
+        for item in eatenItems.filter({ item in
+            Calendar.current.isDateInToday(item.date)
+        }) {
             eaten += Int(Double(item.amount) * (item.product.nutriments.energyKcal ?? 0) / 100)
         }
         

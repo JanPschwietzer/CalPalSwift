@@ -18,7 +18,11 @@ struct EatenItemsListView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(eatenItems) { item in
+            ForEach(eatenItems.filter({ item in
+                Calendar.current.isDateInToday(item.date)
+            }).sorted(by: { lhs, rhs in
+                lhs.date > rhs.date
+            })) { item in
                 HStack {
                     AsyncImage(url: URL(string: item.product.image ?? "")) { image in
                         image

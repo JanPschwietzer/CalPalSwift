@@ -44,7 +44,9 @@ extension BarChartView {
         energyKcal: 0, carbohydrates: 0, fat: 0, proteins: 0, sugars: 0, fiber: 0, salt: 0, saturatedFat: 0
         )
         
-        for item in eatenItems {
+        for item in eatenItems.filter({ item in
+            Calendar.current.isDateInToday(item.date)
+        }) {
             nutriments.carbohydrates! += Double(item.amount * Int(item.product.nutriments.carbohydrates ?? 0) / 100)
             nutriments.sugars! += Double(item.amount * Int(item.product.nutriments.sugars ?? 0) / 100)
             nutriments.fat! += Double(item.amount * Int(item.product.nutriments.fat ?? 0) / 100)
