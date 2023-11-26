@@ -9,10 +9,13 @@ import Foundation
 import Charts
 import SwiftUI
 
-struct ChartData: Identifiable {
+struct ChartData: Identifiable, Equatable {
+    static func == (lhs: ChartData, rhs: ChartData) -> Bool {
+        lhs.id == rhs.id
+    }
+    
     var id = UUID()
     
     var name: String
     var number: Double
-    var style: (any ShapeStyle)?
 }

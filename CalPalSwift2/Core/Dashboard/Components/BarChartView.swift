@@ -15,17 +15,15 @@ struct BarChartView: View {
     @State private var chartData = [ChartData]()
     
     var body: some View {
-        Chart {
-            ForEach(chartData) { item in
-                BarMark(x: .value("number", item.number), y: .value("name", item.name))
-                    .foregroundStyle(by: .value("Type", item.name))
-                    .accessibilityHidden(true)
-                    .annotation(position: .trailing) {
-                        Text("\(item.number.formatted())g")
-                            .font(.footnote)
-                            .foregroundStyle(Color.primary)
-                    }
-            }
+        Chart(chartData) { item in
+            BarMark(x: .value("number", item.number), y: .value("name", item.name))
+                .foregroundStyle(by: .value("Type", item.name))
+                .accessibilityHidden(true)
+                .annotation(position: .trailing) {
+                    Text("\(item.number.formatted())g")
+                        .font(.footnote)
+                        .foregroundStyle(Color.primary)
+                }
         }
         .chartLegend(.hidden)
         .chartXAxis(.hidden)
@@ -42,7 +40,7 @@ struct BarChartView: View {
 extension BarChartView {
     func setChartData() {
         
-        var nutriments = NutrimentsDatabase(
+        let nutriments = NutrimentsDatabase(
         energyKcal: 0, carbohydrates: 0, fat: 0, proteins: 0, sugars: 0, fiber: 0, salt: 0, saturatedFat: 0
         )
         
