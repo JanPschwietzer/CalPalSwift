@@ -11,6 +11,7 @@ CalPal bietet eine nahtlose Benutzererfahrung. Scanne einfach Barcodes von Leben
 ## Smarte Ziele
 Deine individuellen Ziele stehen im Mittelpunkt. Gib deine Zielsetzungen ein - sei es Abnehmen, Muskelaufbau oder einfach eine gesündere Ernährung. CalPal erstellt daraufhin ein personalisiertes Kalorienziel für dich.
 |![Die Daten in den Einstellungen werden für die Berechnung deines Kalorienziels genutzt](./screenshots/3_a.png)|![Das Einstellungenfenster im Darkmode](./screenshots/3_b.png)|
+|--|--|
 
 ## Fortschrittliche Analysen
 Erhalte tiefere Einblicke in deine Ernährungsgewohnheiten. Verfolge nicht nur Kalorien, sondern auch Nährstoffe wie Protein, Kohlenhydrate und Fett. Unsere App liefert dir visuelle Berichte und Diagramme, um deinen Fortschritt zu überwachen.
