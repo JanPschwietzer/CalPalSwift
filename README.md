@@ -23,9 +23,8 @@ CalPal ist mehr als nur eine App - es ist dein treuer Begleiter auf dem Weg zu e
 
 ### Todo:
 #### Generell:
-- [ ] App Icon erstellen
-- [ ] HealthKit Integration
-- [ ] CloudKit Integration
+- [x] App Icon erstellen
+- [ ] TipKit für Einstellungen beim ersten Start
 - [ ] Widget
 - [ ] Lokalisierung
 
@@ -33,7 +32,7 @@ CalPal ist mehr als nur eine App - es ist dein treuer Begleiter auf dem Weg zu e
 - [ ] Wöchentliche Zusammenfassung
 
 ### Ideen:
-- [ ] Erinnerungen für Mahlzeiten
-- [ ] Werbung oder Premiummodell
+- [ ] HealthKit Integration
+- [ ] CloudKit Integration
 
 ### Bugs:
