@@ -55,7 +55,7 @@ extension PieChartView {
         for item in eatenItems.filter({ item in
             Calendar.current.isDateInToday(item.date)
         }) {
-            eaten += Int(Double(item.amount) * (item.product.nutriments.energyKcal ?? 0) / 100)
+            eaten += Int(Double(item.amount) * (item.product.nutriments.energyKcal ) / 100)
         }
         
         if calories < eaten {

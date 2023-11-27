@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B4C3D0B2B1472F000750A57 /* CalculateCalories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C3D0A2B1472F000750A57 /* CalculateCalories.swift */; };
+		4B4C3D0F2B14853C00750A57 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4C3D0E2B14853C00750A57 /* CodeScanner */; };
+		4B4C3D112B14883400750A57 /* CodeScannerSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C3D102B14883400750A57 /* CodeScannerSheetView.swift */; };
 		4B89A4C32B0F731900DC7CD9 /* CalPalSwift2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89A4C22B0F731900DC7CD9 /* CalPalSwift2App.swift */; };
 		4B89A4C72B0F731A00DC7CD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B89A4C62B0F731A00DC7CD9 /* Assets.xcassets */; };
 		4B89A4CA2B0F731A00DC7CD9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B89A4C92B0F731A00DC7CD9 /* Preview Assets.xcassets */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B4C3D0A2B1472F000750A57 /* CalculateCalories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateCalories.swift; sourceTree = "<group>"; };
+		4B4C3D0C2B14850C00750A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4B4C3D102B14883400750A57 /* CodeScannerSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScannerSheetView.swift; sourceTree = "<group>"; };
 		4B89A4BF2B0F731900DC7CD9 /* CalPalSwift2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalPalSwift2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B89A4C22B0F731900DC7CD9 /* CalPalSwift2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalPalSwift2App.swift; sourceTree = "<group>"; };
 		4B89A4C62B0F731A00DC7CD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4C3D0F2B14853C00750A57 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,7 @@
 		4B89A4C12B0F731900DC7CD9 /* CalPalSwift2 */ = {
 			isa = PBXGroup;
 			children = (
+				4B4C3D0C2B14850C00750A57 /* Info.plist */,
 				4B89A4D22B0F736600DC7CD9 /* Services */,
 				4B89A4D12B0F735E00DC7CD9 /* Models */,
 				4B89A4D02B0F735500DC7CD9 /* Core */,
@@ -159,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				4B89A4D32B0F738600DC7CD9 /* OpenFoodFactsService.swift */,
+				4B4C3D0A2B1472F000750A57 /* CalculateCalories.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,6 +231,7 @@
 				4BA8CC5D2B12334600CEBF95 /* BarChartView.swift */,
 				4B89A4F82B0FA7EB00DC7CD9 /* PieChartView.swift */,
 				4B89A4FA2B0FA84800DC7CD9 /* EatenItemsListView.swift */,
+				4B4C3D102B14883400750A57 /* CodeScannerSheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -260,6 +270,9 @@
 			dependencies = (
 			);
 			name = CalPalSwift2;
+			packageProductDependencies = (
+				4B4C3D0E2B14853C00750A57 /* CodeScanner */,
+			);
 			productName = CalPalSwift2;
 			productReference = 4B89A4BF2B0F731900DC7CD9 /* CalPalSwift2.app */;
 			productType = "com.apple.product-type.application";
@@ -288,6 +301,9 @@
 				Base,
 			);
 			mainGroup = 4B89A4B62B0F731900DC7CD9;
+			packageReferences = (
+				4B4C3D0D2B14853C00750A57 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 4B89A4C02B0F731900DC7CD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,12 +340,14 @@
 			files = (
 				4BA8CC712B135F3600CEBF95 /* AddProductView.swift in Sources */,
 				4B89A4D42B0F738600DC7CD9 /* OpenFoodFactsService.swift in Sources */,
+				4B4C3D0B2B1472F000750A57 /* CalculateCalories.swift in Sources */,
 				4B89A5082B0FC57000DC7CD9 /* ActivityLevel.swift in Sources */,
 				4B89A4DD2B0F769F00DC7CD9 /* EatenItem.swift in Sources */,
 				4B89A4DA2B0F748900DC7CD9 /* Nutriments.swift in Sources */,
 				4B89A4D82B0F746300DC7CD9 /* Product.swift in Sources */,
 				4B89A4F72B0F878400DC7CD9 /* ChartData.swift in Sources */,
 				4B89A4C32B0F731900DC7CD9 /* CalPalSwift2App.swift in Sources */,
+				4B4C3D112B14883400750A57 /* CodeScannerSheetView.swift in Sources */,
 				4B89A5062B0FC52900DC7CD9 /* Gender.swift in Sources */,
 				4B89A50A2B0FC58000DC7CD9 /* Goal.swift in Sources */,
 				4B89A4F92B0FA7EB00DC7CD9 /* PieChartView.swift in Sources */,
@@ -481,8 +499,10 @@
 				DEVELOPMENT_TEAM = Z93V4S588G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalPalSwift2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CalPal;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera for the barcode scanner";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -512,8 +532,10 @@
 				DEVELOPMENT_TEAM = Z93V4S588G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CalPalSwift2/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CalPal;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera for the barcode scanner";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -554,6 +576,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B4C3D0D2B14853C00750A57 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B4C3D0E2B14853C00750A57 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B4C3D0D2B14853C00750A57 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B89A4B72B0F731900DC7CD9 /* Project object */;
 }

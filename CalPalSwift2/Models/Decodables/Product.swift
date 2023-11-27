@@ -14,7 +14,6 @@ struct Product: Codable, Equatable, Identifiable {
     var brands: String
     var image: String?
     var nutriscore: String?
-    var serving: String?
     var nutriments: Nutriments
     
     static func == (lhs: Product, rhs: Product) -> Bool {
@@ -27,7 +26,18 @@ struct Product: Codable, Equatable, Identifiable {
         case brands = "brands"
         case image = "image_front_url"
         case nutriscore = "nutriscore_grade"
-        case serving = "serving_quantity"
+        //case serving = "serving_quantity"
         case nutriments = "nutriments"
+    }
+    
+    func toProductDatabase() -> ProductDatabase {
+        return ProductDatabase(
+            id: id,
+            product_name: product_name,
+            brands: brands,
+            image: image,
+            nutriscore: nutriscore,
+            nutriments: nutriments.toNutrimentsDatabase()
+        )
     }
 }

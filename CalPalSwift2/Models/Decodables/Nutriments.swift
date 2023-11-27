@@ -8,14 +8,14 @@
 import Foundation
 
 struct Nutriments: Codable {
-    var energyKcal: Double?
-    var carbohydrates: Double?
-    var fat: Double?
-    var proteins: Double?
-    var sugars: Double?
-    var fiber: Double?
-    var salt: Double?
-    var saturatedFat: Double?
+    var energyKcal: Double = 0
+    var carbohydrates: Double = 0
+    var fat: Double = 0
+    var proteins: Double = 0
+    var sugars: Double = 0
+    var fiber: Double = 0
+    var salt: Double = 0
+    var saturatedFat: Double = 0
     
     enum CodingKeys: String, CodingKey {
         case energyKcal = "energy-kcal_100g"
@@ -26,5 +26,18 @@ struct Nutriments: Codable {
         case fiber = "fiber_100g"
         case salt = "salt_100g"
         case saturatedFat = "saturated-fat_100g"
+    }
+    
+    func toNutrimentsDatabase() -> NutrimentsDatabase {
+        return NutrimentsDatabase(
+            energyKcal: energyKcal,
+            carbohydrates: carbohydrates,
+            fat: fat,
+            proteins: proteins,
+            sugars: sugars,
+            fiber: fiber,
+            salt: salt,
+            saturatedFat: saturatedFat
+        )
     }
 }

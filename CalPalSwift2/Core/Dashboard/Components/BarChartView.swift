@@ -47,23 +47,23 @@ extension BarChartView {
         for item in eatenItems.filter({ item in
             Calendar.current.isDateInToday(item.date)
         }) {
-            nutriments.carbohydrates! += Double(item.amount * Int(item.product.nutriments.carbohydrates ?? 0) / 100)
-            nutriments.sugars! += Double(item.amount * Int(item.product.nutriments.sugars ?? 0) / 100)
-            nutriments.fat! += Double(item.amount * Int(item.product.nutriments.fat ?? 0) / 100)
-            nutriments.saturatedFat! += Double(item.amount * Int(item.product.nutriments.saturatedFat ?? 0) / 100)
-            nutriments.fiber! += Double(item.amount * Int(item.product.nutriments.fiber ?? 0) / 100)
-            nutriments.proteins! += Double(item.amount * Int(item.product.nutriments.proteins ?? 0) / 100)
-            nutriments.salt! += Double(item.amount * Int(item.product.nutriments.salt ?? 0) / 100)
+            nutriments.carbohydrates += Double(item.amount * Int(item.product.nutriments.carbohydrates ) / 100)
+            nutriments.sugars += Double(item.amount * Int(item.product.nutriments.sugars ) / 100)
+            nutriments.fat += Double(item.amount * Int(item.product.nutriments.fat ) / 100)
+            nutriments.saturatedFat += Double(item.amount * Int(item.product.nutriments.saturatedFat ) / 100)
+            nutriments.fiber += Double(item.amount * Int(item.product.nutriments.fiber ) / 100)
+            nutriments.proteins += Double(item.amount * Int(item.product.nutriments.proteins ) / 100)
+            nutriments.salt += Double(item.amount * Int(item.product.nutriments.salt ) / 100)
         }
         
         chartData = [
-            ChartData(name: "carbs", number: nutriments.carbohydrates ?? 0),
-            ChartData(name: "sugar", number: nutriments.sugars ?? 0),
-            ChartData(name: "protein", number: nutriments.proteins ?? 0),
-            ChartData(name: "fiber", number: nutriments.fiber ?? 0),
-            ChartData(name: "fat", number: nutriments.fat ?? 0),
-            ChartData(name: "saturated fat", number: nutriments.saturatedFat ?? 0),
-            ChartData(name: "salt", number: nutriments.salt!)
+            ChartData(name: "carbs", number: nutriments.carbohydrates ),
+            ChartData(name: "sugar", number: nutriments.sugars ),
+            ChartData(name: "protein", number: nutriments.proteins ),
+            ChartData(name: "fiber", number: nutriments.fiber ),
+            ChartData(name: "fat", number: nutriments.fat ),
+            ChartData(name: "saturated fat", number: nutriments.saturatedFat ),
+            ChartData(name: "salt", number: nutriments.salt)
         ]
     }
 }

@@ -14,4 +14,10 @@ struct FoodFacts: Codable {
         case product = "product"
     }
         
+    func toEatenItem(mealTime: MealTime, date: Date, amount: Int) -> EatenItem {
+        
+        let calories = CalculateCaloriesService.calculateCalories(product: product, amount: amount)
+        
+        return EatenItem(mealTime: mealTime, date: date, amount: amount, calories: calories, product: product.toProductDatabase())
+    }
 }

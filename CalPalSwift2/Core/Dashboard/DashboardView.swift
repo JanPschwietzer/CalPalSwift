@@ -17,6 +17,7 @@ struct DashboardView: View {
     @State private var isKeyboardVisible = false
     @State private var searchText = ""
     @State private var showAddProductView = false
+    @State private var showScanner = false
     
     @State private var calories = 0
     
@@ -50,10 +51,14 @@ struct DashboardView: View {
                 }
             }
             .fullScreenCover(isPresented: $showAddProductView) {
-                AddProductView()
+                AddProductView(barcode: searchText)
                     .onDisappear {
+                        searchText = ""
                         getCalories()
                     }
+            }
+            .fullScreenCover(isPresented: $showScanner) {
+                CodeScannerSheetView(searchText: $searchText, showScanner: $showScanner, showAddProductView: $showAddProductView)
             }
         }
         .onTapGesture {
@@ -83,7 +88,7 @@ extension DashboardView {
             }
             .disabled(searchText.isEmpty)
             Button {
-                showAddProductView = true
+                showScanner = true
             } label: {
                 Image(systemName: "camera")
                     .foregroundColor(isKeyboardVisible ? Color.gray.opacity(0.5) : .accent
@@ -92,7 +97,7 @@ extension DashboardView {
             
         }
         .padding()
-        .frame(width: UIScreen.main.bounds.size.width, height: 60, alignment: .center)
+        .frame(width: abs(UIScreen.main.bounds.size.width), height: 60, alignment: .center)
         .background(.thinMaterial)
         .offset(y: -7)
     }
